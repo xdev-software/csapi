@@ -1,0 +1,337 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.xdev-software</groupId>
+	<artifactId>csapi</artifactId>
+	<version>6.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>XDEV Component Suite</name>
+	<description>XDEV Component Suite</description>
+	<url>https://github.com/xdev-software/csapi</url>
+
+	<scm>
+		<url>https://github.com/xdev-software/csapi</url>
+		<connection>https://github.com/xdev-software/csapi.git</connection>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License version 3</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+		</license>
+	</licenses>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<license.licenseName>lgpl_v3</license.licenseName>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<com.jidesoft.version>3.7.10</com.jidesoft.version>
+	</properties>
+
+	<organization>
+		<name>XDEV Software</name>
+		<url>https://xdev-software.com</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>XDEV Software</name>
+			<organization>XDEV Software</organization>
+			<url>https://xdev-software.com</url>
+		</developer>
+	</developers>
+
+
+	<inceptionYear>2011</inceptionYear>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.xdev-software</groupId>
+			<artifactId>xapi</artifactId>
+			<version>5.0.3</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-common</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-grids</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-components</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-action</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-pivot</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-data</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-dock</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-charts</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-gantt</artifactId>
+			<version>${com.jidesoft.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>3.0.0-M1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>3.0.0-M1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.9.1</version>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M5</version>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>3.5.4</version>
+								</requireMavenVersion>
+								<requireJavaVersion>
+									<version>1.8</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>2.0.0</version>
+
+				<executions>
+					<execution>
+						<id>first</id>
+						<goals>
+							<goal>update-file-header</goal>
+						</goals>
+						<phase>process-sources</phase>
+						<configuration>
+							<roots>
+								<root>src/main/java</root>
+								<root>src/test/java</root>
+							</roots>
+							<canUpdateCopyright>true</canUpdateCopyright>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sourcepath>src/main/java/xdev</sourcepath>
+					<quiet>true</quiet>
+					<doclint>none</doclint>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.2</version>
+
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>8.44</version>
+					</dependency>
+				</dependencies>
+
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+					<encoding>UTF-8</encoding>
+					<consoleOutput>false</consoleOutput>
+					<failsOnError>true</failsOnError>
+					<linkXRef>false</linkXRef>
+				</configuration>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<!-- version is intentional not up-to-date. There is a bug in 3.2.0 see 
+					https://issues.apache.org/jira/browse/MDEP-757 -->
+				<version>3.1.2</version>
+				<executions>
+					<execution>
+						<id>analyze</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>analyze-only</goal>
+						</goals>
+						<configuration>
+							<failOnWarning>true</failOnWarning>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+
+	<profiles>
+		<profile>
+			<id>xdev-build</id>
+			<repositories>
+				<!-- The order of definitions matters. Explicitly defining central here 
+					to make sure it has the highest priority. -->
+				<repository>
+					<id>central</id>
+					<url>https://repo.maven.apache.org/maven2</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>xdevjfrog</id>
+					<url>https://xdev.jfrog.io/artifactory/xdev5/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+
+		</profile>
+
+
+	</profiles>
+
+</project>
