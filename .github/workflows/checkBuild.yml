@@ -33,7 +33,11 @@ jobs:
         server-id: xdevjfrog
         server-username: ARTIFACTORY_USERNAME_REF # env variable name for username of Artifactory server
         server-password: ARTIFACTORY_TOKEN_REF # env variable name for Artifactory access token
-      
+    
+    - name: DEBUG
+      run: |
+        cat ~/.m2/settings.xml
+
     - name: Build with Maven
       run: mvn -B clean verify
       env:
