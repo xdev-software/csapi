@@ -30,7 +30,7 @@ jobs:
         distribution: ${{ matrix.distribution }}
         java-version: ${{ matrix.java }}
         java-package: ${{ matrix.java-package }}
-        server-id: artifactory
+        server-id: xdevjfrog
         server-username: ARTIFACTORY_USERNAME_REF # env variable name for username of Artifactory server
         server-password: ARTIFACTORY_TOKEN_REF # env variable name for Artifactory access token
       
