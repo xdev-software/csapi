@@ -31,7 +31,7 @@ jobs:
         cp .github/workflows/maven/m2-settings-release.xml ~/.m2/settings.xml
 
     - name: Publish to OSSRH
-      run: mvn -B deploy -Possrh
+      run: mvn -B deploy -Pxdev-build,ossrh
       env:
         JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
         JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
