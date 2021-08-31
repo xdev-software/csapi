@@ -27,7 +27,7 @@ jobs:
       # until GH makes it work
     - name: Copy predefined settings into Home folder
       run: |
-        mkdir -p ~/.m2/settings.xml
+        mkdir -p ~/.m2/
         cp .github/workflows/maven/m2-settings-release.xml ~/.m2/settings.xml
 
 #    - name: Publish to OSSRH
