@@ -31,8 +31,8 @@ jobs:
         java-version: ${{ matrix.java }}
         java-package: ${{ matrix.java-package }}
         server-id: xdevjfrog
-        server-username: ARTIFACTORY_USERNAME_REF # env variable name for username of Artifactory server
-        server-password: ARTIFACTORY_TOKEN_REF # env variable name for Artifactory access token
+        server-username: JFROG_ARTIFACTORY_USERNAME # env variable name for username of Artifactory server
+        server-password: JFROG_ARTIFACTORY_TOKEN # env variable name for Artifactory access token
     
     - name: DEBUG
       run: |
@@ -41,8 +41,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean verify
       env:
-        ARTIFACTORY_USERNAME_REF: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        ARTIFACTORY_TOKEN_REF: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
+        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
       
     - name: Check for uncommited changes
       run: |
