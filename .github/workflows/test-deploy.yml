@@ -25,7 +25,7 @@ jobs:
     
       # ... so let's simply copy a predefined settings.xml file into the m2 folder
       # until GH makes it work
-    - name: Copy predefined settings into Home folder
+    - name: Copy predefined settings into home m2 folder
       run: |
         mkdir -p ~/.m2/
         cp .github/workflows/maven/m2-settings-release.xml ~/.m2/settings.xml
