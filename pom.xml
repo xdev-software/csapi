@@ -32,7 +32,7 @@
 		</developer>
 	</developers>
 
-		<licenses>
+	<licenses>
 		<license>
 			<name>GNU Lesser General Public License version 3</name>
 			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
@@ -47,6 +47,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<com.jidesoft.version>3.7.10</com.jidesoft.version>
+		
+		<tests.excludedGroups>xdev.category.UITest</tests.excludedGroups>
 	</properties>
 
 	<repositories>
@@ -341,8 +343,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<excludedGroups>
+						${tests.excludedGroups}
+					</excludedGroups>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>run-all-tests</id>
+			<properties>
+				<tests.excludedGroups></tests.excludedGroups>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
