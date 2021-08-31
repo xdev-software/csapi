@@ -17,20 +17,7 @@
 		<connection>https://github.com/xdev-software/csapi.git</connection>
 	</scm>
 
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License version 3</name>
-			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
-		</license>
-	</licenses>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<license.licenseName>lgpl_v3</license.licenseName>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<com.jidesoft.version>3.7.10</com.jidesoft.version>
-	</properties>
+	<inceptionYear>2011</inceptionYear>
 
 	<organization>
 		<name>XDEV Software</name>
@@ -45,8 +32,65 @@
 		</developer>
 	</developers>
 
+		<licenses>
+		<license>
+			<name>GNU Lesser General Public License version 3</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-	<inceptionYear>2011</inceptionYear>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<license.licenseName>lgpl_v3</license.licenseName>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<com.jidesoft.version>3.7.10</com.jidesoft.version>
+	</properties>
+
+	<repositories>
+		<!-- The order of definitions matters. Explicitly defining central here 
+			to make sure it has the highest priority. -->
+		<repository>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<!-- This is required for JIDE components -->
+			<id>xdevjfrog</id>
+			<url>https://xdev.jfrog.io/artifactory/xdev5/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<!-- The order of definitions matters. Explicitly defining central here 
+			to make sure it has the highest priority. -->
+		<pluginRepository>
+			<id>central</id>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -54,7 +98,6 @@
 			<artifactId>xapi</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>com.jidesoft</groupId>
@@ -164,8 +207,8 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<plugins>
 
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -299,39 +342,7 @@
 				</executions>
 			</plugin>
 
-
 		</plugins>
 	</build>
-
-
-	<profiles>
-		<profile>
-			<id>xdev-build</id>
-			<repositories>
-				<!-- The order of definitions matters. Explicitly defining central here 
-					to make sure it has the highest priority. -->
-				<repository>
-					<id>central</id>
-					<url>https://repo.maven.apache.org/maven2</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-				</repository>
-				<repository>
-					<id>xdevjfrog</id>
-					<url>https://xdev.jfrog.io/artifactory/xdev5/</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
-
-		</profile>
-
-
-	</profiles>
 
 </project>
