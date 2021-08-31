@@ -61,14 +61,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<!-- This is required for JIDE components -->
-			<id>xdevjfrog</id>
-			<url>https://xdev.jfrog.io/artifactory/xdev5/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -358,6 +350,32 @@
 	</build>
 	
 	<profiles>
+		<profile>
+			<!-- This build uses a private XDEV maven repository server where JIDE is hosted -->
+			<id>xdev-build</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+				<!-- The order of definitions matters. Explicitly defining central here 
+					to make sure it has the highest priority. -->
+				<repository>
+					<id>central</id>
+					<url>https://repo.maven.apache.org/maven2</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<!-- This is required for JIDE components -->
+					<id>xdevjfrog</id>
+					<url>https://xdev.jfrog.io/artifactory/xdev5/</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
 		<profile>
 			<id>run-all-tests</id>
 			<properties>
