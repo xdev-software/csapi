@@ -25,6 +25,9 @@ package xdev.ui;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+import xdev.category.UITest;
 
 /**
  * 
@@ -41,7 +44,8 @@ import org.junit.Test;
  *  for example if specific property components ar functional correct displayed.
  * --------------------------------------------------------------------------------------------------------------------------------------
  */
-public class XdevTabbedPane2JTest 
+@Category(UITest.class)
+public class XdevTabbedPane2JTest
 {
 	/**
 	 * {@link XdevTabbedPane2#setColorTheme(int)}.
@@ -49,7 +53,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void setColorTheme1()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setColorTheme(XdevTabbedPane2.COLOR_THEME_OFFICE2003);
 		Assert.assertEquals(XdevTabbedPane2.COLOR_THEME_OFFICE2003, tp.getColorTheme());
 	}
@@ -60,7 +64,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void setColorTheme2()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setColorTheme(XdevTabbedPane2.COLOR_THEME_VSNET);
 		Assert.assertEquals(XdevTabbedPane2.COLOR_THEME_VSNET, tp.getColorTheme());
 	}
@@ -71,7 +75,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void setTabShape1()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setTabShape(XdevTabbedPane2.SHAPE_VSNET);
 		Assert.assertEquals(XdevTabbedPane2.SHAPE_VSNET, tp.getTabShape());
 	}
@@ -82,7 +86,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void setTabShape2()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setTabShape(XdevTabbedPane2.SHAPE_EXCEL);
 		Assert.assertEquals(XdevTabbedPane2.SHAPE_EXCEL, tp.getTabShape());
 	}
@@ -95,7 +99,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void colorShape_combination()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setTabShape(XdevTabbedPane2.SHAPE_EXCEL);
 		tp.setColorTheme(XdevTabbedPane2.COLOR_THEME_VSNET);
 		Assert.assertEquals(XdevTabbedPane2.SHAPE_EXCEL, tp.getTabShape());
@@ -110,7 +114,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void colorShape_combination2()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setTabShape(XdevTabbedPane2.SHAPE_VSNET);
 		tp.setColorTheme(XdevTabbedPane2.COLOR_THEME_OFFICE2003);
 		Assert.assertEquals(XdevTabbedPane2.SHAPE_VSNET, tp.getTabShape());
@@ -125,7 +129,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void closeCombination1()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setShowCloseButtonOnSelectedTab(true);
 		tp.setShowCloseButton(true);
 		Assert.assertTrue(tp.isShowCloseButtonOnSelectedTab());
@@ -140,7 +144,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void closeCombination2()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setShowCloseButtonOnTab(true);
 		tp.setShowCloseButton(true);
 		Assert.assertTrue(tp.isShowCloseButton());
@@ -155,7 +159,7 @@ public class XdevTabbedPane2JTest
 	@Test
 	public void closeCombination3()
 	{
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setShowCloseButtonOnTab(true);
 		tp.setShowCloseButtonOnSelectedTab(true);
 		Assert.assertTrue(tp.isShowCloseButtonOnSelectedTab());
@@ -172,7 +176,7 @@ public class XdevTabbedPane2JTest
 	public void setWidthCombination1()
 	{
 		//render fail!
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setBoldActiveTab(true);
 		tp.setShowGripper(true);
 		tp.setShowCloseButtonOnTab(true);
@@ -195,7 +199,7 @@ public class XdevTabbedPane2JTest
 	public void setWidthCombination2()
 	{
 		//render fail!
-		XdevTabbedPane2 tp = new XdevTabbedPane2();
+		final XdevTabbedPane2 tp = new XdevTabbedPane2();
 		tp.setBoldActiveTab(true);
 		tp.setShowGripper(true);
 		tp.setShowCloseButtonOnTab(true);
