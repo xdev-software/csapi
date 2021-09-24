@@ -2,6 +2,9 @@
 * Published this library as open source
 * Ensured build compatibility with Java 8, 11 and 17
 
+Before version 6.0.0, csapi was distributed as commercial software.<br/>
+We provide this framework that was built on top of JIDE Components as open-source. However, to use it you have to license the base components from JIDE [https://www.jidesoft.com](https://www.jidesoft.com).<br/>Mention that you are using XDEV Component Suite and get a discounted license.
+
 *Feel free to contact us or open an issue if you have any questions.*
 
 ### Complete overview about the new XDEV (IDE) Framework in version 6
