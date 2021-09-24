@@ -279,7 +279,6 @@
 					</execution>
 				</executions>
 				<configuration>
-					<sourcepath>src/main/java/xdev</sourcepath>
 					<quiet>true</quiet>
 					<doclint>none</doclint>
 				</configuration>
