@@ -11,14 +11,14 @@ The XDEV Component Suite provides you ultimate power features, which extremely u
 Before version 6.0.0, csapi was distributed as commercial software. We provide this framework that was built on top of JIDE Components as open-source. However, to use it you have to license the base components from JIDE [https://www.jidesoft.com](https://www.jidesoft.com). Mention that you are using XDEV Component Suite and get a discounted license.
 
 
-## [Migration Guide to version 6+](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600)
-[The guide](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600) is available in the changelog.
-
-
 ## XDEV-IDE
 XDEV(-IDE) is a visual Java development environment for fast and easy application development (RAD - Rapid Application Development). XDEV differs from other Java IDEs such as Eclipse or NetBeans, focusing on programming through a far-reaching RAD concept. The IDE's main components are a Swing GUI builder, the XDEV Application Framework, and numerous drag-and-drop tools and wizards with which the functions of the framework can be integrated.
 
 The XDEV-IDE was license-free up to version 4 inclusive and is available for Windows, Linux and macOS. From version 5, the previously proprietary licensed additional modules are included in the IDE and the license of the entire product has been converted to a paid subscription model. The XDEV Application Framework, which represents the core of the RAD concept of XDEV and is part of every XDEV application, was released as open-source in 2008.
+
+
+## [Migration Guide to version 6+](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600)
+[The guide](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600) is available in the changelog.
 
 ## Contributing
 
