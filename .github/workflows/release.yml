@@ -83,7 +83,7 @@ jobs:
         release_name: v${{ steps.version.outputs.release }}
         commitish: master
         body: |
-          ## Installation
+          ## Installation [![Maven Central](https://img.shields.io/maven-central/v/com.xdev-software/csapi?versionPrefix=${{ steps.version.outputs.release }})](https://mvnrepository.com/artifact/com.xdev-software/csapi)
           Add the following lines to your pom:
           ```XML
           <dependency>
