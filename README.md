@@ -10,19 +10,9 @@ The XDEV Component Suite provides you ultimate power features, which extremely u
 
 Before version 6.0.0, csapi was distributed as commercial software. We provide this framework that was built on top of JIDE Components as open-source. However, to use it you have to license the base components from JIDE [https://www.jidesoft.com](https://www.jidesoft.com). Mention that you are using XDEV Component Suite and get a discounted license.
 
-## Migration Guide to version 6+
-### Dropped Components in version 6.0.0
-These components are dropped from the XDEV Component Suite.
 
-| Component | Comment |
-| -- | -- |
-| XDEVCalendar | XDEV Calendar is based on the MigCalendar component which is no longer supported. https://www.componentsource.com/brand/mig-infocom | 
-| XdevTextEditor| Does not support Java9+ |
-| Synthetica Look And Feels | The Synthetica Look And Feels are no longer part of the XDEV Component Suite, because the integration code did not add that much value to the usage of the Look and Feels. You can get an up-to-date version of the Look and Feels at https://www.jyloo.com |
-
-### Dependencies
-You must provide a [repositroy](https://maven.apache.org/guides/mini/guide-multiple-repositories.html) in your `pom.xml` with the JIDE dependencies to run a build.
-These artifacts are available from [https://www.jidesoft.com](https://www.jidesoft.com)
+## [Migration Guide to version 6+](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600)
+[The guide](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600) is available in the changelog.
 
 
 ## XDEV-IDE
