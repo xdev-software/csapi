@@ -405,21 +405,44 @@
 												<exclude>META-INF/*.DSA</exclude>
 												<exclude>META-INF/*.RSA</exclude>
 												<exclude>MANIFEST.MF</exclude>
-												<!-- make sure Apache NOTICE files are not overridden. -->
+											</excludes>
+										</filter>
+									</filters>
+
+									<createSourcesJar>true</createSourcesJar>
+									<transformers>
+
+										<!-- we don't include the MANIFEST.MF files from other jar to avoid 
+											them from overriding ours -->
+										<transformer
+											implementation="org.apache.maven.plugins.shade.resource.DontIncludeResourceTransformer">
+											<resource>MANIFEST.MF</resource>
+										</transformer>
+
+										<!-- make sure Apache Licenses files are not overridden. -->
+										<transformer
+											implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
+
+										</transformer>
+
+										<!-- make sure Apache NOTICE files are not overridden. -->
 										<transformer
 											implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
 											<addHeader>false</addHeader>
 										</transformer>
+
 										<!-- append overlapping files -->
 										<transformer
 											implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 											<resource>META-INF/LICENSE.APACHE2</resource>
 										</transformer>
+
 										<!-- append overlapping files -->
 										<transformer
 											implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 											<resource>overview.html</resource>
 										</transformer>
+
 										<!-- adding some infos to the MANIFEST.MF -->
 										<transformer
 											implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
@@ -428,11 +451,13 @@
 												<X-Compile-Target-JDK>${maven.compiler.target}</X-Compile-Target-JDK>
 											</manifestEntries>
 										</transformer>
+
 									</transformers>
 								</configuration>
 							</execution>
 						</executions>
 					</plugin>
+
 				</plugins>
 			</build>
 		</profile>
