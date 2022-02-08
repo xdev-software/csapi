@@ -259,7 +259,6 @@
 								<root>src/main/java</root>
 								<root>src/test/java</root>
 							</roots>
-							<canUpdateCopyright>true</canUpdateCopyright>
 						</configuration>
 					</execution>
 				</executions>
