@@ -4,3 +4,4 @@ bin/
 .classpath
 .project
 .checkstyle
+dependency-reduced-pom.xml
