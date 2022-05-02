@@ -166,7 +166,7 @@ jobs:
         JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
 
     - name: Upload licenses - Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: dependencies-licenses
         path: target/site
