@@ -7,7 +7,7 @@ Java Swing provides a significant set of controls for developing graphical user 
 
 The XDEV Component Suite provides you ultimate power features, which extremely upgrades your application and makes it multiple times more capable and comfortable. Extend your solutions with features your users only dream about yet. Best of all - the integrations is amazingly easy!
 
-Before version 6.0.0, csapi was distributed as commercial software. We provide this framework that was built on top of JIDE Components as open-source. However, to use it you have to license the base components from JIDE [https://www.jidesoft.com](https://www.jidesoft.com). Mention that you are using XDEV Component Suite and get a discounted license.
+Before version 6.0.0, csapi was distributed as commercial software. We provide this framework that was built on top of JIDE Components as open-source. However, to use it you have to license the base components from [JIDE](https://www.jidesoft.com). Mention that you are using XDEV Component Suite and get a discounted license.
 
 ## [Migration Guide to version 6+](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600)
 [The guide](https://github.com/xdev-software/csapi/blob/develop/CHANGELOG.md#600) is available in the changelog.
