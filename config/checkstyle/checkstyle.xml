@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: XDEV Checks
+    Description: none
+-->
 <module name="Checker">
   <property name="severity" value="warning"/>
-  <property name="fileExtensions" value="java, properties"/>
   <module name="TreeWalker">
-    <module name="JavadocMethod">
-      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
-    </module>
+    <property name="tabWidth" value="4"/>
+    
+    
     <module name="JavadocType">
       <property name="severity" value="ignore"/>
       <property name="scope" value="protected"/>
@@ -40,7 +46,7 @@
     <module name="MethodName">
       <property name="id" value="MethodName"/>
       <property name="format" value="^[a-zA-Z_][a-zA-Z0-9_]*$"/>
-      <message key="name.invalidPattern" value="'{0}'' does not match the pattern ''{1}''."/>
+      <message key="name.invalidPattern" value="'{0}'' entspricht nicht dem Muster ''{1}''."/>
     </module>
     <module name="PackageName">
       <property name="id" value="PackageName"/>
@@ -68,13 +74,12 @@
     </module>
     <module name="UnusedImports">
       <property name="id" value="UnusedImports"/>
-      <message key="import.unused" value="Unsed import - {0}."/>
+      <message key="import.unused" value="Nicht benutzter import - {0}."/>
     </module>
     <module name="MethodLength">
-      <property name="severity" value="ignore"/>
       <property name="id" value="MethodLength"/>
-      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
+   
     <module name="MethodParamPad">
       <property name="severity" value="ignore"/>
       <property name="id" value="MethodParamPad"/>
@@ -99,10 +104,11 @@
     </module>
     <module name="TypecastParenPad">
       <property name="id" value="TypecastParenPad"/>
+      <property name="tokens" value="RPAREN,TYPECAST"/>
     </module>
     <module name="WhitespaceAfter">
       <property name="id" value="WhitespaceAfter"/>
-      <property name="tokens" value="SEMI"/>
+      <property name="tokens" value="COMMA,SEMI"/>
     </module>
     <module name="WhitespaceAround">
       <property name="id" value="WhitespaceAround"/>
@@ -125,7 +131,7 @@
       <property name="id" value="RightCurly"/>
       <property name="option" value="alone"/>
       <property name="tokens" value="LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_IF,LITERAL_ELSE,CLASS_DEF,METHOD_DEF,CTOR_DEF,LITERAL_FOR,LITERAL_WHILE,LITERAL_DO,STATIC_INIT,INSTANCE_INIT"/>
-      <message key="line.same" value="''{0}'' in column {1} should be on the same line as the next part of a multi-block-statement (one, that consists of mulitipe blocks: if/else-if/else or try/catch/finally)"/>
+      <message key="line.same" value="''{0}'' in Spalte {1} sollte auf der gleichen Linie wie der nächste Teil einer Multi-Block-Anweisung (eine, die direkt mehrere Blöcke enthält: if/else-if/else oder try/catch/finally) sein."/>
     </module>
     <module name="EmptyStatement">
       <property name="id" value="EmptyStatement"/>
@@ -135,9 +141,10 @@
     </module>
     <module name="MagicNumber">
       <property name="id" value="MagicNumber"/>
+      <property name="constantWaiverParentToken" value="TYPECAST,METHOD_CALL,EXPR,ARRAY_INIT,UNARY_MINUS,UNARY_PLUS,ELIST,STAR,ASSIGN,PLUS,MINUS,DIV,LITERAL_NEW"/>
     </module>
     <module name="MissingSwitchDefault">
-      <message key="missing.switch.default" value="MissingSwitchDefault: without &quot;default&quot; case."/>
+      <message key="missing.switch.default" value="MissingSwitchDefault: switch ohne &quot;default&quot;."/>
     </module>
     <module name="SimplifyBooleanExpression">
       <property name="id" value="SimplifyBooleanExpression"/>
@@ -162,7 +169,7 @@
     </module>
     <module name="TodoComment">
       <property name="severity" value="ignore"/>
-      <message key="todo.match" value="TodoComment: Comment does not match to-do-Format ''{0}''."/>
+      <message key="todo.match" value="TodoComment: Kommentar entspricht to-do-Format ''{0}''."/>
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="UpperEll">
@@ -224,34 +231,32 @@
     <module name="OneTopLevelClass">
       <property name="id" value="OneTopLevelClass"/>
     </module>
-    <module name="WhitespaceAfter">
-      <property name="severity" value="ignore"/>
-      <property name="tokens" value="SEMI,TYPECAST,LITERAL_IF,LITERAL_ELSE,LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,DO_WHILE"/>
-      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
-    </module>
-    <module name="WhitespaceAfter">
-      <property name="severity" value="ignore"/>
-      <property name="tokens" value="SEMI,TYPECAST,LITERAL_IF,LITERAL_ELSE,LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,DO_WHILE"/>
-      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
-    </module>
 	<module name="IllegalType">
 		<!-- java.util.Optional should not be used for parameters. See https://rules.sonarsource.com/java/RSPEC-3553 -->
    		<property name="tokens" value="PARAMETER_DEF"/>
    		<property name="illegalClassNames" value="java.util.Optional"/>
    		<metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
    	</module>
-  </module>
-  <module name="BeforeExecutionExclusionFileFilter">
-    <property name="fileNamePattern" value="package\-info\.java$"/>
-  </module>
-  <module name="JavadocPackage">
-    <property name="severity" value="ignore"/>
-    <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+   	<module name="SuppressionCommentFilter">
+	    <metadata name="net.sf.eclipsecs.core.comment" value="Specific Check"/>
+	    <property name="offCommentFormat" value="CHECKSTYLE\.OFF\: *([\w\|]+)"/>
+	    <property name="onCommentFormat" value="CHECKSTYLE\.ON\: *([\w\|]+)"/>
+	    <property name="checkFormat" value="$1"/>
+	</module>
+	<module name="SuppressionCommentFilter">
+	    <metadata name="net.sf.eclipsecs.core.comment" value="All Checks"/>
+	</module>
+   	
   </module>
   <module name="LineLength">
+     <property name="severity" value="ignore"/>
+     <property name="id" value="LineLength"/>
+     <property name="max" value="120"/>
+     <property name="tabWidth" value="4"/>
+     <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+   </module>
+  <module name="JavadocPackage">
     <property name="severity" value="ignore"/>
-    <property name="id" value="LineLength"/>
-    <property name="max" value="120"/>
     <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
   </module>
   <module name="NewlineAtEndOfFile">
@@ -269,27 +274,38 @@
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Inlined Tabs"/>
-    <property name="severity" value="ignore"/>
     <property name="format" value="^(/*)\t*?[^\n\t/]+?\t"/>
     <property name="message" value="Inlined Tab"/>
     <property name="fileExtensions" value="java"/>
-    <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="CheckStyle Off Grund"/>
     <property name="format" value="CHECKSTYLE\.OFF\: *([\w\|]+)\s*$"/>
-    <property name="message" value="Missing reason for checkstyle supression"/>
+    <property name="message" value="Begründung fehlt (bitte aussagekräftig)"/>
     <property name="fileExtensions" value="java"/>
   </module>
   <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="CheckStyle All Off Grund"/>
     <property name="format" value="CHECKSTYLE\:OFF\s*$"/>
-    <property name="message" value="Missing reason for checkstyle supression"/>
+    <property name="message" value="Begründung fehlt (bitte aussagekräftig)"/>
     <property name="fileExtensions" value="java"/>
   </module>
-  <module name="SuppressWithPlainTextCommentFilter">
-    <property name="offCommentFormat" value="CHECKSTYLE\:OFF\:(\w+)"/>
-    <property name="onCommentFormat" value="CHECKSTYLE\:ON\:(\w+)"/>
-    <property name="checkFormat" value="$1"/>
-  </module>
+  <module name="SuppressionSingleFilter">
+     <property name="checks" value="."/>
+     <property name="files" value="[\\/]srcgen[\\/].*\.java$"/>
+   </module>
+   <module name="SuppressionSingleFilter">
+     <property name="checks" value="."/>
+     <property name="files" value="[\\/]resources[\\/].*\.sql$"/>
+   </module>
+   <module name="SuppressionSingleFilter">
+     <property name="checks" value="."/>
+     <property name="files" value="[\\/]software.xdev[\\/].*\.java$"/>
+   </module>
+   <module name="SuppressionSingleFilter">
+     <property name="checks" value="MagicNumberCheck"/>
+     <property name="files" value="[\\/]test[\\/].*\.java$"/>
+   </module>
+   
+   
 </module>

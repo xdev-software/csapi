@@ -7,10 +7,10 @@ jobs:
   publish_central: # Publish the code to central
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
-    - name: Set up JDK 8 OSSRH
-      uses: actions/setup-java@v2
+    - name: Set up JDK OSSRH
+      uses: actions/setup-java@v3
       with: # running setup-java again overwrites the settings.xml
         distribution: 'temurin'
         java-version: '8'
@@ -22,7 +22,7 @@ jobs:
         # Due to https://github.com/actions/setup-java/issues/85 we can only 
         # add ONE server using setup-java...
         overwrite-settings: false
-    
+
       # ... so let's simply copy a predefined settings.xml file into the m2 folder
       # until GH makes it work
     - name: Copy predefined settings into home m2 folder
@@ -33,8 +33,8 @@ jobs:
     - name: Publish to OSSRH
       run: mvn -B deploy -Pxdev-build,ossrh
       env:
-        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        GH_PACKAGES_READ_USERNAME: ${{ secrets.GH_PACKAGES_READ_USERNAME }}
+        GH_PACKAGES_READ_TOKEN: ${{ secrets.GH_PACKAGES_READ_TOKEN }}
         MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}

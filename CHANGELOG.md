@@ -1,3 +1,7 @@
+## 6.0.2
+* Updated dependencies
+* Migrated internal build to ``GitHub packages``
+
 ## 6.0.1
 * Updated xapi to ``6.0.1``
 * Updated maven plugins
