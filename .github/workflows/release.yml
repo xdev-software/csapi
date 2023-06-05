@@ -20,15 +20,15 @@ jobs:
         distribution: 'temurin'
         java-version: '8'
         cache: 'maven'
-        server-id: xdevjfrog
-        server-username: JFROG_ARTIFACTORY_USERNAME # env variable name for username of Artifactory server
-        server-password: JFROG_ARTIFACTORY_TOKEN # env variable name for Artifactory access token
+        server-id: proprietary-xdev-dependencies
+        server-username: GH_PACKAGES_READ_USERNAME # env variable name for username of Artifactory server
+        server-password: GH_PACKAGES_READ_TOKEN # env variable name for Artifactory access token
       
     - name: Build with Maven
       run: mvn -B clean verify
       env:
-        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        GH_PACKAGES_READ_USERNAME: ${{ secrets.GH_PACKAGES_READ_USERNAME }}
+        GH_PACKAGES_READ_TOKEN: ${{ secrets.GH_PACKAGES_READ_TOKEN }}
       
     - name: Check for uncommited changes
       run: |
@@ -135,8 +135,8 @@ jobs:
     - name: Publish to OSSRH
       run: mvn -B deploy -Pxdev-build,ossrh
       env:
-        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        GH_PACKAGES_READ_USERNAME: ${{ secrets.GH_PACKAGES_READ_USERNAME }}
+        GH_PACKAGES_READ_TOKEN: ${{ secrets.GH_PACKAGES_READ_TOKEN }}
         MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
@@ -159,15 +159,15 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '8'
-        server-id: xdevjfrog
-        server-username: JFROG_ARTIFACTORY_USERNAME # env variable name for username of Artifactory server
-        server-password: JFROG_ARTIFACTORY_TOKEN # env variable name for Artifactory access token
+        server-id: proprietary-xdev-dependencies
+        server-username: GH_PACKAGES_READ_USERNAME # env variable name for username of Artifactory server
+        server-password: GH_PACKAGES_READ_TOKEN # env variable name for Artifactory access token
 
     - name: Build dependencies/licenses files
       run: mvn -B project-info-reports:dependencies
       env:
-        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        GH_PACKAGES_READ_USERNAME: ${{ secrets.GH_PACKAGES_READ_USERNAME }}
+        GH_PACKAGES_READ_TOKEN: ${{ secrets.GH_PACKAGES_READ_TOKEN }}
 
     - name: Upload licenses - Upload Artifact
       uses: actions/upload-artifact@v3

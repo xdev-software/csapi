@@ -31,15 +31,15 @@ jobs:
         java-version: ${{ matrix.java }}
         java-package: ${{ matrix.java-package }}
         cache: 'maven'
-        server-id: xdevjfrog
-        server-username: JFROG_ARTIFACTORY_USERNAME # env variable name for username of Artifactory server
-        server-password: JFROG_ARTIFACTORY_TOKEN # env variable name for Artifactory access token
+        server-id: proprietary-xdev-dependencies
+        server-username: GH_PACKAGES_READ_USERNAME # env variable name for username of Artifactory server
+        server-password: GH_PACKAGES_READ_TOKEN # env variable name for Artifactory access token
     
     - name: Build with Maven
       run: mvn -B clean verify
       env:
-        JFROG_ARTIFACTORY_USERNAME: ${{ secrets.JFROG_ARTIFACTORY_USERNAME }}
-        JFROG_ARTIFACTORY_TOKEN: ${{ secrets.JFROG_ARTIFACTORY_TOKEN }}
+        GH_PACKAGES_READ_USERNAME: ${{ secrets.GH_PACKAGES_READ_USERNAME }}
+        GH_PACKAGES_READ_TOKEN: ${{ secrets.GH_PACKAGES_READ_TOKEN }}
       
     - name: Check for uncommited changes
       run: |

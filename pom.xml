@@ -265,8 +265,8 @@
                 </repository>
                 <repository>
                     <!-- This is required for JIDE components -->
-                    <id>xdevjfrog</id>
-                    <url>https://xdev.jfrog.io/artifactory/xdev5/</url>
+                    <id>proprietary-xdev-dependencies</id>
+                    <url>https://maven.pkg.github.com/xdev-software/xdev-dependencies</url>
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
